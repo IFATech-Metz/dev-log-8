@@ -3,15 +3,16 @@ var xhr = new XMLHttpRequest();
 // Forme générale du lien :
 // http://api.openweathermap.org/data/2.5/weather?q=Metz&3c084bd74c2f77f02d6d6c30c2018bf0
 
-var base_url = "http://api.openweathermap.org/data/2.5/weather?q=";
+var base_url = "http://api.openweathermap.org/data/2.5/weather";
 var city = "Metz";
 var units = "metric";
 var appid = "3c084bd74c2f77f02d6d6c30c2018bf0";
 
 function get_url() {
-    return base_url + city
-        + "&units=" + units
-        + "&appid=" + appid;
+    return base_url + "?"
+        + "q=" + city + "&"
+        + "units=" + units + "&"
+        + "appid=" + appid;
 }
 
 function init_page() {
