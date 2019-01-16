@@ -6,7 +6,7 @@ var xhr = new XMLHttpRequest();
 var base_url = "http://api.openweathermap.org/data/2.5/weather";
 var city = "Metz";
 var units = "metric";
-var appid = "3c084bd74c2f77f02d6d6c30c2018bf0";
+var appid = "621266adac915fdb1f3b829394fd097d";
 
 function get_url() {
     return base_url + "?"
