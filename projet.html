@@ -1,26 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Météo du jour</title>
-    <script src="meteo.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Météo du jour</title>
+            <script src="meteo.js"></script>
+            <link href="style.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     </head>
-</head>
+    <body onload="init_page()">
+            <header>
 
+                    <nav id="bar">
+                            <a href="projet.html">Application météo<span class="orange">.</span></span></a>
+                        </nav>
+                    </div>
+                
+            
+                <section id="main-image">
+                        <div class="wrapper">
+                            <h2>Visualisez<br><strong>une température</strong></h2>
+                            </div>
+                    </section>
+                
+                
+                    <section id="steps">
+                            <div class="wrapper">
+                                    <form>
+                                            <label for="city"></label>
+                                            <input type="text" id="ville" value="" placeholder="Insérez une ville">
+                                            <button type="button" class="button-1" onclick="get_temperature()" >Envoyer</button>
+                                            <input type="checkbox" id="url_visibility"></form>
+                                            <div id="meteo"></div>
+                                            <img id="icon" src="">
+                                <ul>
+                                   <li id="step-1">
+                                        <h4>Température</h4>
+                                        <p>0°</p>
+                                    </li>
+                                    <li id="step-2">
+                                        <h4>Vent</h4>
+                                        <p>0km/h</p>
+                                    </li>
+                                    <li id="step-3">
+                                        <h4>Prévisions</h4>
+                                        <p>/</p>
+                                    </li>
+                                    <div class="clear"></div>
+                                </ul>
+                            </div>
+                        </section>
+                    
         
         
         
-<body onload="init_page()">
-        <h1>Application M&eacute;t&eacute;o</h1>
-        <div id="meteo">
+
+        <div id="url">
 
         </div>
-
-        <h2>Bienvenue à</h2> <br>
-        <p>Giovanni CHARLES-EDOUARD</p>
-    
-</body>
+        </section>
+    <footer>
+        <div class="wrapper"><h2>Collaboration</h2>
+        <p>Sebastien, Franck, Fabrice, Giovanni.</p></div>
+    </footer>
+    </body>
 </html>
