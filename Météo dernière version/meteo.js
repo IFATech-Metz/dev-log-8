@@ -6,7 +6,7 @@ var xhr = new XMLHttpRequest();
 var base_url = "http://api.openweathermap.org/data/2.5/weather";
 var city = "Metz";
 var units = "metric";
-var appid = "3c084bd74c2f77f02d6d6c30c2018bf0";
+var appid = "c23e679afa604dbb80dc7bf0fe967796";
 
 function get_url() {
     return base_url + "?"
@@ -53,49 +53,11 @@ function get_temperature() {
             var temperature = response.main.temp;
 
             var icon = response.weather[0].icon;
-            var main = response.weather[0].main;
-            
-            switch (main){
-                case "Rain" :
-                    var elem = document.getElementById("main-image");
-                    elem.style.backgroundImage = "url('images/rain.jpg')";
-                    break;
-                case "Clouds" :
-                    var elem = document.getElementById("main-image");
-                    elem.style.backgroundImage = "url('images/cloud.jpg')";
-                    break;
-                case "Thunderstorm" :
-                    var elem = document.getElementById("main-image");
-                    elem.style.backgroundImage = "url('images/thunderstorm.jpg')";
-                    break;
-                case "Clear" :
-                    var elem = document.getElementById("main-image");
-                    elem.style.backgroundImage = "url('images/clear.jpg')";
-                    break;
-                case "Atmosphere" :
-                    var elem = document.getElementById("main-image");
-                    elem.style.backgroundImage = "url('koa.jpg')";
-                    break;
-                case "Snow":
-                    var elem = document.getElementById("main-image");
-                    elem.style.backgroundImage = "url('images/snow.jpg')";
-                    break;
-                case "Drizzle":
-                    var elem = document.getElementById("main-image");
-                    elem.style.backgroundImage = "url('images/drizzle.jpg')";
-                    break;
-                default :
-                    var elem = document.getElementById("main-image");
-                    elem.style.backgroundImage = "url('images/defaut.jpg')";
-                    /*Ensoleillé*/
-
-
-            }
             var src = "http://openweathermap.org/img/w/" + icon + ".png";
             
             document.getElementById("meteo").innerHTML = temperature;
             document.getElementById("icon").src = src;
-            document.getElementById("ma").innerHTML = main;
+
         }
     };
     
