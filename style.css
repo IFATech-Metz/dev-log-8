@@ -9,6 +9,7 @@ body
 {
     font-family: 'Lato';
     font-size: 15px;
+    background;
 }
 nav {
     text-align: left;
@@ -22,9 +23,7 @@ nav a {
     text-decoration: none;
     color:#777;
     transition-duration: .2s;
-}
-
-nav a:hover {
+}nav a:hover {
     color: orange;
 }
 h1,h2,h3,h4
@@ -50,11 +49,12 @@ p
     line-height: 20px;
     color: #777;
 }
-.wrapper
+.divider
 {
-    width: 940px;
-    margin: 0 auto;
-    padding: 0 10px;
+    width: 100px;
+    height:2px;
+    background-color:yellow;
+    margin: 0 auto 20px;
 }
 .orange
 {
@@ -99,8 +99,7 @@ section {
 /* POSSIBILITIES */
 
 form
-{
-    
+{   
 }
 label
 {
@@ -295,7 +294,7 @@ h2{
 
 footer
 {
-    height: 96.5px;
+    height: 98.5px;
     background-color: #444;
 }
 footer h2
