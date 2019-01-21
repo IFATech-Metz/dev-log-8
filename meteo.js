@@ -51,6 +51,9 @@ function get_temperature() {
 
             var response = JSON.parse(this.responseText);
             var temperature = response.main.temp;
+            var cit = response.name;
+            var country = response.sys.country;
+            var date = response.dt;
 
             var icon = response.weather[0].icon;
             var main = response.weather[0].main;
@@ -93,9 +96,14 @@ function get_temperature() {
             }
             var src = "http://openweathermap.org/img/w/" + icon + ".png";
             
+            
+            document.getElementById("cit").innerHTML = cit;
+            document.getElementById("cit").innerHTML += ", " + country;
+            document.getElementById("date").innerHTML = date;
             document.getElementById("meteo").innerHTML = temperature;
             document.getElementById("icon").src = src;
             document.getElementById("ma").innerHTML = main;
+            
         }
     };
     
