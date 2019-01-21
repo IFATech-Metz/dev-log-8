@@ -16,6 +16,18 @@ function get_url() {
         + "appid=" + appid;
 }
 
+function timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
+  }
 
 function init_page() {
     xhr.onreadystatechange = function() {
@@ -55,7 +67,8 @@ function get_temperature() {
             var temperature = response.main.temp;
             var cit = response.name;
             var country = response.sys.country;
-
+            var dt = response.dt;
+            var date = timeConverter(dt);
             var icon = response.weather[0].icon;
             var main = response.weather[0].main;
             
@@ -100,6 +113,7 @@ function get_temperature() {
             document.getElementById("meteo").innerHTML = temperature;
             document.getElementById("cit").innerHTML = cit;
             document.getElementById("cit").innerHTML += ", " + country;
+            document.getElementById("date").innerHTML = date;
             document.getElementById("icon").src = src;
             document.getElementById("ma").innerHTML = main;
             
