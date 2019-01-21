@@ -1,21 +1,39 @@
-<!DOCTYPE html>
-<html lang="fr">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>M&eacute;t&eacute;o du jour</title>
         <script src="meteo.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Météo du jour</title>
+        <meta charset = "UTF-8">
     </head>
-
-        
-        
-    
-    <body onload="init_page()">
+    <body onload="init_page();" >
         <h1>Application M&eacute;t&eacute;o</h1>
-        <div id="meteo">
+
+        <p>
+            Nom de la ville :
+            <input type="text" id="ville" value=""><br>
+            <button type="button" onclick="get_temperature()" >Envoyer</button>
+            <input type="checkbox" id="url_visibility">
+        </p>
+
+        <div id="url">
 
         </div>
+        <div id="meteo">
+
+        
+
+        </div>
+        <div id= "ma">
+
+        </div>
+
+        <img id="icon" src="">
+
+
+
+        
+
+        <img id="main-image" src="">
+        
     </body>
-</html>
+</html>         
