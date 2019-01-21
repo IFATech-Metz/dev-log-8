@@ -1,8 +1,311 @@
+/* GENERAL */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body 
+{
+    font-family: 'Lato';
+    font-size: 15px;
+    background;
+}
+nav {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 35px;
+    padding: 12px;
+    font-family: 'Oswald';
+}
+
+nav a {
+    text-decoration: none;
+    color:#777;
+    transition-duration: .2s;
+}nav a:hover {
+    color: orange;
+}
+h1,h2,h3,h4
+{
+  color: #444;  
+}
+h1
+{
+    font-family: 'Oswald', serif;
+    font-size: 45px;
+    text-transform: uppercase;
+}
+h2
+{
+    font-size: 20px;
+}
+h3
+{
+    font-size: 30px;
+}
+p
+{
+    line-height: 20px;
+    color: #777;
+}
+.divider
+{
+    width: 100px;
+    height:2px;
+    background-color:yellow;
+    margin: 0 auto 20px;
+}
+.orange
+{
+    color:#FF5B2B;
+}
+.clear
+{
+    clear: both;   
+}
+small
+{
+    font-size: 13px;
+    font-style:italic;
+}
+
+/* HEADER */
+
+header 
+{
+    height: 500px;   
+}
+/* MAIN IMAGE */
+#main-image
+{
+    /*height: 100px;*/
+    background: center center no-repeat;
+}
+#main-image h2
+{
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    margin-bottom: 10px;
+}
+p{
+    font-weight: bold;
+}
+section {
+    padding: 8.5px 0;
+}
+/* POSSIBILITIES */
+
+form
+{   
+}
+label
+{
+    padding:0px 300px;
+    font-weight: bold;
+    font-size: 20px;   
+}
+input[type="text"]
+{
+    padding:8px 50px;
+    font-size: 20px;
+    margin: 10px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+}
+button
+{
+    width: 120px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 15px;
+}
+button:hover
+{
+    background:orange;
+}
+.btn-grad {
+    background-image: linear-gradient(to right, #FF4E50 0%, #F9D423 51%, #FF4E50 100%)
+}
+.btn-grad:hover { 
+    background-position: right center
+}
+/* CHECKBOX*/
+
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+  }
+  .buka {
+    text-align:center;
+    font-weight: bold;
+    letter-spacing:1px;
+    color:#fff;
+    opacity:0;
+    -webkit-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition:.5s ;
+  }
+  .buka a {
+    color:#6fcbed;
+    text-decoration:none;
+  }
+  #check:checked ~ .buka{
+    opacity:1;
+    letter-spacing:2px;
+  }
+  input[type="checkbox"] {
+    display:none;
+  }
+  #loadcheck {
+    position:absolute;
+    left:0;
+    right:0;
+    margin:30px auto;
+  }
+  #loadcheck1 {
+    position:absolute;
+    left:0;
+    right:0;
+    margin:75px auto;
+  }
+  .loadcheck {
+    width:165px;
+    height:40px;
+    font-size:35px;
+  }
+  .loadcheck span {float:left;}
+  .load {
+    display:block;
+    width:7px;
+    height:7px;
+    margin:20px 5px;
+    border-radius:10px;
+    transition:.5s;
+    cursor:pointer;
+  }
+  .load:nth-child(2){
+    background:#db1536;
+  }
+  .load:nth-child(3){
+    background:rgba(219, 21, 54,.7);
+  }
+  .load:nth-child(4){
+    background:rgba(219, 21, 54,.5);
+  }
+  .load:nth-child(5){
+    background:rgba(219, 21, 54,.3);
+  }
+  .load:nth-child(6){
+    background:rgba(219, 21, 54,.1);
+  }
+  span[class*="entypo"]{cursor:pointer;}
+  span[class*="cancel"]{
+    font-size:40px;
+    color:#db1536;
+    transition:.5s;
+    transition-delay:.1s;
+  }
+  span[class*="check"]{
+    color:rgba(0,0,0,.1);
+    transition:.5s;
+    transition-delay:.1s;
+  }
+  #check:checked + .loadcheck .entypo-check{
+    color:#58d37b;
+  }
+  #check:checked + .loadcheck .entypo-cancel{
+    color:rgba(0,0,0,.1);
+  }
+  #check:checked + .loadcheck .load:nth-child(2){
+    background:rgba(88, 211, 123,.1);
+  }
+  #check:checked + .loadcheck .load:nth-child(3){
+    background:rgba(88, 211, 123,.3);
+  }
+  #check:checked + .loadcheck .load:nth-child(4){
+    background:rgba(88, 211, 123,.5);
+  }
+  #check:checked + .loadcheck .load:nth-child(5){
+    background:rgba(88, 211, 123,.7);
+  }
+  #check:checked + .loadcheck .load:nth-child(6){
+    background:#58d37b;
+  }
+  /*LIEN / TEMPÉRATURE / ICON*/
 #url {
     color: red;
     display: none;
 }
 #meteo {
-    color: white;
-    background: black;
+    font-size:35px;
+    text-align: center;
+}
+img{
+    padding: 10px 445px;
+    
+}
+
+/* PROJET bouton de recherche ville*/
+/*label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}*/
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+.note {
+    font-size: .8em;
+}
+/* CARD */
+.project-re{
+	width: 100%;
+	display: flex;
+    justify-content: center;
+}
+.card{
+	margin: 30px;
+	width: 24%;
+	display: flex;
+	box-shadow: 0px 0px 35px 10px #9e9e9e;
+	flex-direction: column;
+	align-items: center;
+	padding: 16px;
+    border-radius: 5px;
+}
+.card .title{
+	background-color: yellow;
+	padding: 10px;
+	border-radius:  23px;
+}
+h2{
+	text-align: center;
+	font-size: 35px;
+}
+
+/* FOOTER */
+
+footer
+{
+    height: 98.5px;
+    background-color: #444;
+}
+footer h2
+{
+    color:#fff;
+    text-transform: uppercase;
+    text-align: center;
+    padding:10px;
+}
+footer p
+{
+    text-align:center;
+    text-transform: uppercase;
 }

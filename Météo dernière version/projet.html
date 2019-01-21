@@ -1,0 +1,61 @@
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Météo du jour</title>
+            <script src="meteo.js"></script>
+            <link href="style.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    </head>
+    <body onload="init_page()">
+            <header>
+
+                    <nav id="bar">
+                            <a href="projet.html">Application météo<span class="orange">.</span></span></a>
+                        </nav>
+                    </div>
+                
+            
+                <section id="main-image">
+                        <div class="wrapper">
+                            <h2>Visualisez<br><strong>une température</strong></h2>
+                            </div>
+                    </section>
+                
+                
+                    <section id="temp">
+                            <div class="wrapper">
+                                    <form>
+                                            <label for="city"></label>
+                                            <input type="text" id="ville" value="" placeholder="Insérez une ville">
+                                            <button type="button" class="button-1" onclick="get_temperature()" >Envoyer</button>
+                                            <input type="checkbox" id="url_visibility"></form>
+                                            <div id="meteo"></div>
+                                            <img id="icon" src="">
+                                <ul>
+                                    <li id="temp1">
+                                        <h4>Vent</h4>
+                                        <p>0km/h</p>
+                                    </li>
+                                    <li id="temp2">
+                                        <h4>Prévisions</h4>
+                                        <p>/</p>
+                                    </li>
+                                    <div class="clear"></div>
+                                </ul>
+                            </div>
+                        </section>
+                    
+        
+        
+        
+
+        <div id="url"></div>
+    <footer>
+        <div class="wrapper"><h2>Collaboration</h2>
+        <p>Sebastien, Franck, Fabrice, Giovanni.</p></div>
+    </footer>
+    </body>
+</html>
