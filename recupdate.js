@@ -1,3 +1,4 @@
+var audio = new Audio('orage.mp3');
 function timeConverter(UNIX_timestamp){
     var a = new Date(UNIX_timestamp * 1000);
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -12,6 +13,7 @@ function timeConverter(UNIX_timestamp){
   }
 
 function init(){
-var date = timeConverter(1548064703);
+var date = timeConverter(1548064750);
 document.getElementById("timestamp").innerHTML = date;
+setTimeout(() => {audio.play();},3000);
 }
