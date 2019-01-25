@@ -1,63 +1,74 @@
 <html>
-    <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Météo du jour</title>
-            <script src="meteo.js"></script>
-            <link href="style.css" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    </head>
-    <body onload="init_page()">
-            <header>
 
-                    <nav id="bar">
-                            <a href="projet.html">Application météo<span class="orange">.</span></span></a>
-                        </nav>
-                    </div>
-                
-            
-                <section>
-                        <div class="wrapper">
-                            <h2>Visualisez<br><strong>une température</strong></h2>
-                            </div>
-                    </section>
-                
-                        <form>
-                                <label for="city"></label>
-                                <input type="text" id="ville" value="" placeholder="Entrez une ville">
-                                <button type="button" class="btn-grad" onclick="get_temperature()" >Rechercher</button>
-                                <input type="checkbox" class="check" id="url_visibility">
-                                    <div class="chek"><input type="checkbox" id="check">
-                                    <label for="check" class="loadcheck" id="loadcheck">
-                                      <span class="entypo-cancel">&#10008;</span>
-                                      <span class="load"></span>
-                                      <span class="load"></span>
-                                      <span class="load"></span>
-                                      <span class="load"></span>
-                                      <span class="load"></span>
-                                      <span class="entypo-check">&#10004;</span>
-                                    </label></div></form><br><br><br><br><br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Météo du jour</title>
+    <script src="meteo.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
 
-                                    
-                                
-                        <section>
-                            <div class="project-re">
-                       <div id="main-image" class="card">
-                            <p class="title" id="cit"></p>
-                            <p id="date"></p>
-                            <div class="divider"></div>
-                            <div id="meteo"></div>
-                            <img id="icon" src=""></p>
-                            <p><a href="#">En savoir plus</a></p>
-                        </div>
+<body onload="init_page()">
+    <header>
+
+        <nav id="bar">
+            <a href="projet.html">Application météo<span class="orange">.</span></span></a>
+        </nav>
+        </header>
+
+        <form>
+            <label for="city"></label>
+            <input type="text" id="ville" value="" placeholder="Entrez une ville">
+            <button type="button" class="btn-grad" onclick="get_temperature()">Rechercher</button>
+            <input type="checkbox" class="check" id="url_visibility">
             </div>
-         <div id="url"></div></section>
+        </form>
 
-    <footer>
-        <div class="wrapper"><h2>dev log 8</h2>
-        <p>Sebastien,Giovanni, Fabrice, Franck </p></div>
-    </footer>
-    </body>
+
+
+        <section>
+            <div class="allcards">
+                <div id="main-image" class="card" >
+                <p class="title" id="cit"></p>
+                <hr width="100%" style="margin-top: 5px;
+                <p id="date"></p><br>
+                <p id="meteo"></p>
+                <img id="icon" src=""></p><br>
+                <p id="vent"></p><br>
+                <p id="humidity"></p><br>
+                <p id="hPa"></p>
+                <div id="url"></div>
+            </div>
+            <div id="main-image" class="card" >
+                <p class="title" id="cit">Horaires</p>
+                <hr>
+                <p class="title">12h</p>
+                <p class="title">15h</p>
+                <p class="title">18h</p>
+                <p class="title">21h</p>
+            </div>
+            <div id="main-image" class="card" >
+                <div class="fond"></div>
+                <p class="title" id="cit">Quotidien</p>
+                <hr>
+                <p class="title">Samedi</p>
+                <p class="title">Dimanche</p>
+                <p class="title">Lundi</p>
+                <p class="title">Mardi</p>
+            </div>
+        </div>
+    </section>
+            
+
+       <footer>
+            <div class="wrapper">
+                <h2>dev log 8</h2>
+                <p>Sebastien, Giovanni, Fabrice, Franck </p>
+            </div>
+        </footer>
+</body>
+
 </html>
