@@ -9,7 +9,7 @@ body {
     font-family: 'Lato';
     font-size: 15px;
         font-family: "lemon";
-        background:url(images/white2.gif) center center;
+        background:url(images/weather3.gif) center center;
         background-repeat: no-repeat;
         background-size: cover;
         height:100px;
@@ -136,6 +136,21 @@ button:hover {
     border-radius: 23px;
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma;
+}
+
+#main-image2
+{
+    background:url(images/night.gif) center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+#main-image3
+
+{
+        background:url(images/white2.gif)center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
 }
 
 /*LIEN / TEMPÉRATURE / ICON*/
