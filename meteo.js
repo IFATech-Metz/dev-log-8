@@ -79,49 +79,49 @@ function get_temperature() {
                 case "Rain" :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/rain.jpg')";
-                    audio = new Audio('pluieforte.mp3');
+                    audio = new Audio('son/pluieforte.mp3');
                     audio.play();
                     break;
                 case "Clouds" :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/cloud.jpg')";
-                    audio = new Audio('nuageux.mp3');
+                    audio = new Audio('son/nuageux.mp3');
                     audio.play();
                     break;
                 case "Thunderstorm" :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/thunderstorm.jpg')";
-                    audio = new Audio('orage.mp3');
+                    audio = new Audio('son/orage.mp3');
                     audio.play();
                     break;
                 case "Clear" :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/clear.jpg')";
-                    audio = new Audio('ensoleille.mp3');
+                    audio = new Audio('son/ensoleille.mp3');
                     audio.play();
                     break;
                 case "Atmosphere" :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('koa.jpg')";
-                    audio = new Audio('atmosphere.mp3');
+                    audio = new Audio('son/atmosphere.mp3');
                     audio.play();
                     break;
                 case "Snow":
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/snow.jpg')";
-                    audio = new Audio('neige.mp3');
+                    audio = new Audio('son/neige.mp3');
                     audio.play();
                     break;
                 case "Drizzle":
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/drizzle.jpg')";
-                    audio = new Audio('pluie.mp3');
+                    audio = new Audio('son/pluie.mp3');
                     audio.play();
                     break;
                 default :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/defaut.jpg')";
-                    audio = new Audio('default.mp3');
+                    audio = new Audio('son/default.mp3');
                     audio.play();
                     /*Ensoleillé*/
 
