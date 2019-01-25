@@ -8,6 +8,7 @@ var city = "Metz";
 var units = "metric";
 var appid = "621266adac915fdb1f3b829394fd097d";
 var date;
+var audio = new Audio('default.mp3');
 
 function get_url() {
     return base_url + "?" +
@@ -57,6 +58,8 @@ function init_page() {
 
 function get_temperature() {
     city = document.getElementById("ville").value;
+    audio.pause();
+    audio.currentTime = 0;
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -77,42 +80,59 @@ function get_temperature() {
             var icon = response.weather[0].icon;
             var main = response.weather[0].main;
 
-            switch (main) {
-                case "Rain":
+            switch (main){
+                case "Rain" :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/rain.jpg')";
+                    audio = new Audio('son/pluieforte.mp3');
+                    audio.play();
                     break;
-                case "Clouds":
+                case "Clouds" :
                     var elem = document.getElementById("main-image");
-                    elem.style.backgroundImage = "url('images/nuages2.jpg')";
+                    elem.style.backgroundImage = "url('images/cloud.jpg')";
+                    audio = new Audio('son/nuageux.mp3');
+                    audio.play();
                     break;
-                case "Thunderstorm":
+                case "Thunderstorm" :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/thunderstorm.jpg')";
+                    audio = new Audio('son/orage.mp3');
+                    audio.play();
                     break;
-                case "Clear":
+                case "Clear" :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/clear.jpg')";
+                    audio = new Audio('son/ensoleille.mp3');
+                    audio.play();
                     break;
-                case "Atmosphere":
+                case "Atmosphere" :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('koa.jpg')";
+                    audio = new Audio('son/atmosphere.mp3');
+                    audio.play();
                     break;
                 case "Snow":
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/snow.jpg')";
+                    audio = new Audio('son/neige.mp3');
+                    audio.play();
                     break;
                 case "Drizzle":
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/drizzle.jpg')";
+                    audio = new Audio('son/pluie.mp3');
+                    audio.play();
                     break;
-                default:
+                default :
                     var elem = document.getElementById("main-image");
                     elem.style.backgroundImage = "url('images/defaut.jpg')";
+                    audio = new Audio('son/default.mp3');
+                    audio.play();
                     /*Ensoleillé*/
 
 
             }
+
             var src = "http://openweathermap.org/img/w/" + icon + ".png";
 
             document.getElementById("meteo").innerHTML = temperature;
