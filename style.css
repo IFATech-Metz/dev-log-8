@@ -6,36 +6,41 @@
 }
 
 body {
-    font-family: 'Lato';
-    font-size: 15px;
+        font-family: 'Lato';
+        font-size: 15px;
         font-family: "lemon";
-        background:url(images/coconut.gif) center center;
+        background:url(images/background.gif) center center;
         background-repeat: no-repeat;
         background-size: cover;
-        height:100px;
-        
+        height:650px;     
 }
 
-nav {
+.title {
     text-align: left;
     text-transform: uppercase;
     font-size: 35px;
-    padding: 12px;
+    padding: 12px 40px;
     font-family: 'Oswald';
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
+    color:#fff;
     transition-duration: .2s;
 }
 
-nav a:hover {
-    color: orange;
+.title:hover {
+    color: #d0b0d0;
+}
+
+h2
+{
+    
+    font: italic small-caps bold 16px/2 cursive;
+    font-size:25px;
+    font-weight: bold;
 }
 p {
-    line-height: 20px;
-    color: #fff;
+    font-weight: bold;
+    font: italic small-caps bold 16px/2 cursive;
+    color:#1b1c1d;
+    font-size: 15px;
 }
 
 .divider {
@@ -54,9 +59,7 @@ header {
     height: 10px;
 }
 /* MAIN IMAGE */
-#main-image {
-    background: center center no-repeat;
-}
+
 
 #main-image h2 {
     font-weight: normal;
@@ -65,34 +68,27 @@ header {
     padding: 10px 0 10px 0;
     margin-bottom: 10px;
 }
-
-p {
-    font-weight: bold;
-    color:black;
-    font-size: 15px;
-}
-h2{
-    font-size:35px;
-}
 hr{
     width:100%;
     margin-top: 5px;
 }
 /* POSSIBILITIES */
 
+form {
+float:right;
+}
 label {
-    padding: 0px 300px;
+    float:right;
     font-weight: bold;
     font-size: 20px;
-
+   /*margin:1px 550px;*/
 }
 input[type="text"] {
-    padding: 8px 50px;
+    padding: 8px 20px;
     font-size: 20px;
-    margin: 10px;
     border: 2px solid #ddd;
     border-radius: 15px;
-    background-color: transparent;
+    text-align: center;
 }
 
 button {
@@ -101,10 +97,11 @@ button {
     color: #fff;
     font-size: 20px;
     line-height: 50px;
-    border-radius: 15px;
+    border-radius: 10px;
+    margin-top: 14px;
 }
 button:hover {
-    background: orange;
+    background-position: right center;
 }
 
 .btn-grad {
@@ -112,45 +109,47 @@ button:hover {
 }
 
 .btn-grad:hover {
-    background-position: right center
+    background-position: right center;
 }
 /* Cartes */
 .allcards {
     width: 100%;
     display: flex;
- padding-top:80px;
+    padding-top:5px;
 }
 .card {
-    margin: 65px;
+    margin: 45px;
     width: 30%;
     display: flex;
-    box-shadow: 0px 0px 35px 10px #9e9e9e;
+    box-shadow: 0px 0px 35px 10px #fff;
     flex-direction: column;
     align-items: center;
-    padding: 16px;
     border-radius: 5px;
 }
 
-.card .title {
-    padding: 10px;
+/*.card .title {
+    padding: 500px;
     border-radius: 23px;
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma;
+}*/
+#main-image {
+    background:url(images/backdefautcard1.jpg) center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #main-image2
 {
-    background:url(images/night.gif) center center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    background:url(images/backdefautcard2.jpg) center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #main-image3
-
 {
-        background:url(images/white2.gif)center center;
+        background:url(images/backquotidien.jpg) center center;
         background-size: cover;
-        background-repeat: no-repeat;
-        
+        background-repeat: no-repeat;       
 }
 
 /*LIEN / TEMPÉRATURE / ICON*/
@@ -158,35 +157,91 @@ button:hover {
     color: red;
     display: none;
 }
-
-#meteo {
-    font-size: 35px;
-    text-align: center;
+#cit {
+    font: italic small-caps bold 16px/2 cursive;
+    font-size:25px;
+    font-weight: bold;
 }
-
-img {
-    padding: 10px 100px;
-}
-
-
 /* FOOTER */
 
 footer {
-    height: 140px;
     background-color: #444;
     background-color: transparent;
-    padding-top:60px;
 }
 
 footer h2 {
-    color: #fff;
+    color: #444;
+    font-family: 'Oswald';
     text-transform: uppercase;
-    text-align: center;
-    padding: 20px;
+    text-align: center; 
 }
-
 footer p {
     text-align: center;
     text-transform: uppercase;
     font-size:20px;
+    color:#fff;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 992px)
+{
+    body {
+        font-family: 'Lato';
+        font-size: 15px;
+        font-family: "lemon";
+        background:url(images/background.gif) center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height:1670px;
+    }
+    nav  {
+        width:auto;
+        text-align:center;
+    }
+    nav a {
+        font-size: 1.8em;
+    }
+    nav a: hover {
+        border-bottom: 0;
+    }
+    form {
+        position: absolute;
+        width: 85%;
+        height:15%;
+        margin: 200px auto;
+
+    }
+    input[type="text"] {
+        padding: 8px 20px;
+        font-size: 22px;
+        border: 2px solid rgb(107, 105, 103);
+        border-radius: 15px;
+        text-align: center;
+    }
+    button {
+        margin:15px 100px;
+    }
+    .allcards {
+        flex-direction: column;
+        align-items: center;
+    }
+    #main-image2 {
+        padding:50px;
+        margin: 65px;
+        width: 30%;
+    }
+    #main-image3 {
+        padding:50px;
+        margin: 65px;
+        width: 30%;
+    }
+    footer  {
+        padding-top: 0px;
+    }
+    footer p
+    {
+        color: red; 
+        font-size: 1.2em;
+    }
 }
