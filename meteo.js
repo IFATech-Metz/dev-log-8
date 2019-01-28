@@ -1,5 +1,9 @@
 var xhr = new XMLHttpRequest();
 var xhr2 =new XMLHttpRequest();
+var decalage;
+var timezone;
+var lat;
+var lon;
 
 
 var base_url_5days = "http://api.openweathermap.org/data/2.5/forecast";
@@ -27,21 +31,58 @@ function get_url_5days(){
 }
 
 function timeConverter(UNIX_timestamp) {
-    var a = new Date(UNIX_timestamp * 1000);
-    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var year = a.getFullYear();
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var hour = a.getHours();
-    var min = a.getMinutes();
-    var sec = a.getSeconds();
+    timezone = $.getJSON('http://api.geonames.org/timezoneJSON?lat='+lat+'&lng='+lon+'&username=sebn', function() {
+	console.log( "success" );
+	})
+	.done(function() {
+	console.log( "second success" );
+	})
+	.fail(function() {
+	console.log( "error" );
+	})
+	.always(function() {
+    decalage = timezone.responseJSON.rawOffset;
+	console.log(decalage);
+    a = new Date(UNIX_timestamp * 1000);
+    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    year = a.getFullYear();
+    month = months[a.getMonth()];
+    date = a.getDate();
+    hour = a.getHours();
+    hour = hour + decalage - 1;
+    min = a.getMinutes();
+    sec = a.getSeconds();
+    if (hour >= 24) {
+        hour = hour - 24;
+        date = date + 1;
+    }
+	if (hour < 0) {
+		hour = hour + 24;
+		date = date - 1;
+        }
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
-    return time;
+    document.getElementById('date').innerHTML = time;
+	});
 }
+
+
 function heure(UNIX_timestamp) {
-    let a = new Date(UNIX_timestamp * 1000);
-    let hour = a.getHours();
-    return hour;
+    timezone = $.getJSON('http://api.geonames.org/timezoneJSON?lat='+lat+'&lng='+lon+'&username=sebn', function() {
+        console.log( "success" );
+        })
+        .done(function() {
+        console.log( "second success" );
+        })
+        .fail(function() {
+        console.log( "error" );
+        })
+        .always(function() {
+        decalage = timezone.responseJSON.rawOffset;
+        let a = new Date(UNIX_timestamp * 1000);
+        let hour = a.getHours();
+        hour = hour + decalage - 1;
+        return hour;
+        });
 }
 function jour(UNIX_timestamp) {
     let a = new Date(UNIX_timestamp * 1000);
@@ -52,8 +93,8 @@ function jour(UNIX_timestamp) {
 
 function showPosition(position) {
    
-    var lat=Math.round(position.coords.latitude);
-    var lon=Math.round(position.coords.longitude);
+    lat=Math.round(position.coords.latitude);
+    lon=Math.round(position.coords.longitude);
     
     city="lat="+lat+"&lon="+lon;
     console.log(city);
@@ -71,7 +112,7 @@ function choix(main){
             var elem = document.getElementById("main-image");
             elem.style.backgroundImage = "url('images/nuages2.jpg')";
             audio = new Audio('son/nuageux.mp3');
-                    audio.play();
+                    //audio.play();
             break;
         case "Thunderstorm":
             var elem = document.getElementById("main-image");
@@ -119,7 +160,6 @@ function init_page(){
     
     //city="lat="+lat+"&lon="+lon;
     //city="lat=49&lon=6";
-    prevision();
     //audio.pause();
     //audio.currentTime = 0;
     
@@ -153,6 +193,8 @@ function init_page(){
             document.getElementById("date").innerHTML = date;
         }
     };
+    
+    prevision();
 
     xhr.open("GET", get_url(), true);
     xhr.send();
@@ -162,7 +204,6 @@ function init_page(){
 
 function get_temperature() {
     city = "q="+document.getElementById("ville").value;
-    prevision();
     audio.pause();
     audio.currentTime = 0;
 
@@ -170,7 +211,9 @@ function get_temperature() {
         if (this.readyState == 4 && this.status == 200) {
             
             
-            var response = JSON.parse(this.responseText);
+            response = JSON.parse(this.responseText);
+            lat = response.coord.lat;
+            lon = response.coord.lon;
             var temperature = Math.round(response.main.temp);
             var cit = response.name;
             var country = response.sys.country;
@@ -199,6 +242,8 @@ function get_temperature() {
          
             }
     };
+    
+    prevision();
 
     xhr.open("GET", get_url(), true);
     xhr.send();
