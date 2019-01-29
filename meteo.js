@@ -70,7 +70,7 @@ function timeConverter(UNIX_timestamp) {
 function heure(UNIX_timestamp) {
         let a = new Date(UNIX_timestamp * 1000);
         let hour = a.getHours();
-        hour = hour + decalage - 1;
+        hour = hour + decalage;
         if (hour >= 24) {
             hour = hour - 24;
             date = date + 1;
@@ -85,7 +85,6 @@ function heure(UNIX_timestamp) {
 
 function jour(UNIX_timestamp) {
     let a = new Date(UNIX_timestamp * 1000);
-    console.log(a.getHours() + decalage + 2);
     if ((a.getHours() + decalage + 2) > 24) {
         a = new Date((UNIX_timestamp +86400)* 1000)
     }
@@ -118,7 +117,7 @@ function choix(main){
             var elem = document.getElementById("main-image");
             elem.style.backgroundImage = "url('images/nuages2.jpg')";
             audio = new Audio('son/nuageux.mp3');
-                    //audio.play();
+                    audio.play();
             break;
         case "Thunderstorm":
             var elem = document.getElementById("main-image");
@@ -130,7 +129,7 @@ function choix(main){
             var elem = document.getElementById("main-image");
             elem.style.backgroundImage = "url('images/clear.jpg')";
             audio = new Audio('son/ensoleille.mp3');
-                    //audio.play();
+                    audio.play();
             break;
         case "Atmosphere":
             var elem = document.getElementById("main-image");
