@@ -266,13 +266,13 @@ function prevision(){
             
             if (response5days.list[0].dt <= 15 && response5days.list[0] > 8) {
                 var elem = document.getElementById("main-image2");
-                elem.style.backgroundImage = "url('images/back16.png')";
+                elem.style.backgroundImage = "url('images/backcard2morning2.png')";
             } else if (response5days.list[0].dt < 24 && response5days.list[0] > 15) {
                 var elem = document.getElementById("main-image2");
-                elem.style.backgroundImage = "url('images/back18.png')";
+                elem.style.backgroundImage = "url('images/backcard2night.png')";
             } else {
                 var elem = document.getElementById("main-image2");
-                elem.style.backgroundImage = "url('images/back18.jpg')";
+                elem.style.backgroundImage = "url('images/backcard2night.jpg')";
             }
            
             for (i=0 ; i<4 ; i++){
