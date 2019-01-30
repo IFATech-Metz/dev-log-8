@@ -272,7 +272,7 @@ function prevision(){
                 elem.style.backgroundImage = "url('images/backcard2night.png')";
             } else {
                 var elem = document.getElementById("main-image2");
-                elem.style.backgroundImage = "url('images/backcard2night(2).jpg')";
+                elem.style.backgroundImage = "url('images/backcard2night.jpg')";
             }
            
             for (i=0 ; i<4 ; i++){
