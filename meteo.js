@@ -8,7 +8,7 @@ var city = "q=Metz";
 var units = "metric";
 var appid = "621266adac915fdb1f3b829394fd097d";
 var date;
-var audio = new Audio('./son/default.mp3');
+var audio;
 
 function get_url() {
     return base_url + "?" +
@@ -62,50 +62,53 @@ function showPosition(position) {
 function choix(main){
     switch (main) {
         case "Rain":
-            var elem = document.getElementById("main-image");
-            elem.style.backgroundImage = "url('images/rain.jpg')";
-            audio = new Audio('son/pluieforte.mp3');
-                    audio.play();
-            break;
-        case "Clouds":
-            var elem = document.getElementById("main-image");
-            elem.style.backgroundImage = "url('images/nuages2.jpg')";
-            audio = new Audio('son/nuageux.mp3');
-                    audio.play();
-            break;
-        case "Thunderstorm":
-            var elem = document.getElementById("main-image");
-            elem.style.backgroundImage = "url('images/thunderstorm.jpg')";
-            audio = new Audio('son/orage.mp3');
-                    audio.play();
-            break;
-        case "Clear":
-            var elem = document.getElementById("main-image");
-            elem.style.backgroundImage = "url('images/clear.jpg')";
-            audio = new Audio('son/ensoleille.mp3');
-                    audio.play();
-            break;
-        case "Atmosphere":
-            var elem = document.getElementById("main-image");
-            elem.style.backgroundImage = "url('koa.jpg')";
-            audio = new Audio('son/atmosphere.mp3');
-                    audio.play();
-            break;
-        case "Snow":
-            var elem = document.getElementById("main-image");
-            elem.style.backgroundImage = "url('images/snow.jpg')";
-            audio = new Audio('son/neige.mp3');
-                    audio.play();
-            break;
-        case "Drizzle":
-            var elem = document.getElementById("main-image");
-            elem.style.backgroundImage = "url('images/drizzle.jpg')";
-            audio = new Audio('son/pluie.mp3');
-                    audio.play();
-            break;
-        default:
-            var elem = document.getElementById("main-image");
-            elem.style.backgroundImage = "url('images/defaut.jpg')";
+        var elem = document.getElementById("main-image");
+        elem.style.backgroundImage = "url('images/backpluieforte.png')";
+        audio = new Audio('son/pluieforte.mp3');
+                audio.play();
+        break;
+    case "Clouds":
+        var elem = document.getElementById("main-image");
+        elem.style.backgroundImage = "url('images/backnuageux.png')";
+        audio = new Audio('son/nuageux.mp3');
+                audio.play();
+        break;
+    case "Thunderstorm":
+        var elem = document.getElementById("main-image");
+        elem.style.backgroundImage = "url('images/backorageux.png')";
+        audio = new Audio('son/orage.mp3');
+                audio.play();
+        break;
+    case "Clear":
+        var elem = document.getElementById("main-image");
+        elem.style.backgroundImage = "url('images/backensoleille.png')";
+        audio = new Audio('son/ensoleille.mp3');
+                audio.play();
+        break;
+    case "Atmosphere":
+        var elem = document.getElementById("main-image");
+        elem.style.backgroundImage = "url('images/backbrouillard.png')";
+        audio = new Audio('son/atmosphere.mp3');
+                audio.play();
+        break;
+    case "Snow":
+        var elem = document.getElementById("main-image");
+        elem.style.backgroundImage = "url('images/backneigeux.png')";
+        audio = new Audio('son/neige.mp3');
+                audio.play();
+        break;
+    case "Drizzle":
+        var elem = document.getElementById("main-image");
+        elem.style.backgroundImage = "url('images/backpluiefaible.png')";
+        audio = new Audio('son/pluie.mp3');
+                audio.play();
+        break;
+    default:
+        var elem = document.getElementById("main-image");
+        elem.style.backgroundImage = "url('images/backcielbleu.png')";
+        audio = new Audio('son/default.mp3');
+        audio.play();
+        
             
             
     }
@@ -223,10 +226,10 @@ function prevision(){
                 elem.style.backgroundImage = "url('images/back16.png')";
             } else if (response5days.list[0].dt < 24 && response5days.list[0] > 15) {
                 var elem = document.getElementById("main-image2");
-                elem.style.backgroundImage = "url('images/back18.png')";
+                elem.style.backgroundImage = "url('images/backcard2morning2.jpg')";
             } else {
                 var elem = document.getElementById("main-image2");
-                elem.style.backgroundImage = "url('images/back18.jpg')";
+                elem.style.backgroundImage = "url('images/backcard2morning2.jpg')";
             }
            
             for (i=0 ; i<4 ; i++){

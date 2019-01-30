@@ -7,7 +7,7 @@
     <title>Weather City</title>
     <script src="meteo.js"></script>
     <link href="style.css" rel="stylesheet">
-    <link rel="stylesheet" media="screen and (max-width: 992px)">
+    
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
@@ -15,13 +15,18 @@
 <body onload="init_page()">
 
         <section class="conteneur">
-                <div class="title"><h1>Weather City<span class="orange">.</span></h1></div>
-                
-                        <form>
-                                <label for="city"></label>
+               
+                <div class="champ">
+                          <form>
+                                <div class="title"><h1>Weather City<span class="orange">.</span></h1></div>
+                                <div class="saisie">
+                                <label for="ville"></label>
                                 <input type="text" id="ville" value="" placeholder="Recherchez une ville">
                                 <button type="button" class="btn-grad" onclick="get_temperature()">OK</button>
+                                </div>
+                                </div>
                             </form>
+                </div>
                     
                 <div class="allcards">
                         <div id="main-image" class="card" >
